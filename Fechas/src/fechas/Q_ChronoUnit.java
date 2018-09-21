@@ -37,6 +37,13 @@ public class Q_ChronoUnit {
 	        System.out.println(seconds + " seconds");
 	        System.out.println(milis + " milis");
 	        System.out.println(nano + " nano");
+	        
+	        System.out.println("ChronoUnit DateBased TimeBased Duration");
+	        System.out.println("---------------------------------------");
+	        for(ChronoUnit unit : ChronoUnit.values()) {
+	        System.out.printf("%10s \t %b \t\t %b \t\t %s %n",
+	        unit, unit.isDateBased(), unit.isTimeBased(), unit.getDuration());
+	        }
 
 	}
 }

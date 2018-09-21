@@ -75,6 +75,10 @@ public class Persona {
 		return Period.between(fechaNacimiento, LocalDate.now()).get(ChronoUnit.YEARS);
 	}
 
+	public boolean getVaron(){
+		return this.sexo.equalsIgnoreCase("M")?true:false;
+	}
+	
 	@Override
 	public int hashCode() {
 		final int prime = 31;

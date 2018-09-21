@@ -6,9 +6,14 @@ package fechas;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
+import java.time.format.FormatStyle;
 
 public class N_ParseFormat {
 	public static void main(String[] args) {
+		// Imprimimos formateando la misma a un formato LARGO
+		LocalDate hoy = LocalDate.now();
+		System.out.println(hoy.format(DateTimeFormatter.ofLocalizedDate(FormatStyle.LONG)));
+
 		try {
 			String diaDespuesDeHoy = "20171112";
 			LocalDate formateada = LocalDate.parse(diaDespuesDeHoy, DateTimeFormatter.BASIC_ISO_DATE);
@@ -23,7 +28,7 @@ public class N_ParseFormat {
 			DateTimeFormatter formatterDif = DateTimeFormatter.ofPattern("yyyyMMdd");
 			LocalDate fecha = LocalDate.parse(otraFecha, formatterDif);
 			System.out.printf("Cadena formateada correctamente %s, la fecha es %s%n", diaDespuesDeHoy, fecha);
-		} catch (DateTimeParseException ex) {		
+		} catch (DateTimeParseException ex) {
 			ex.printStackTrace();
 		}
 
